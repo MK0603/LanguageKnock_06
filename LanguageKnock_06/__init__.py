@@ -55,19 +55,17 @@ for i in range(len(target_1nGram)):
 
 #積集合を出す
 for i in range(len(target_1nGram)):
-    for j in range(len(target_2nGram)):
-        if target_1nGram[i] in target_2nGram:
-            #積集合なので、targetの1,2のどちらでも構わない
-            if not target_1nGram[i] in PROD:
-                PROD.append(target_1nGram[i])
+    if target_1nGram[i] in target_2nGram:
+        #積集合なので、targetの1,2のどちらでも構わない
+        if not target_1nGram[i] in PROD:
+            PROD.append(target_1nGram[i])
 
 #差集合を出す
 for i in range(len(target_1nGram)):
-    for j in range(len(target_2nGram)):
-        if not target_1nGram[i] in target_2nGram:
-            #積集合なので、targetの1,2のどちらでも構わない
-            if not target_1nGram[i] in DIFF:
-                DIFF.append(target_1nGram[i])
+    if not target_1nGram[i] in target_2nGram:
+        #積集合なので、targetの1,2のどちらでも構わない
+        if not target_1nGram[i] in DIFF:
+            DIFF.append(target_1nGram[i])
 
 print(target_1+"にseが含まれるかどうか : ",end="")
 print("se" in target_1nGram)
